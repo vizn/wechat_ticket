@@ -1,0 +1,12 @@
+<import src="../../components/toast/index.wxml" />
+<!--index.wxml-->
+<view class="container">
+  <view  bindtap="bindViewTap" class="userinfo">
+    <image class="userinfo-avatar" src="{{props.userInfo.data.avatarUrl}}" background-size="cover"></image>
+    <text class="userinfo-nickname">{{props.userInfo.data.nickName}}</text>
+  </view>
+  <view class="usermotto">
+    <text class="user-motto">{{props.userInfo.title}}</text>
+  </view>
+</view>
+<template is="zan-toast" data="{{ zanToast }}"></template>
