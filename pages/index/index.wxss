@@ -5,7 +5,8 @@
 .section{
   border-bottom: 1px solid #eee;
   width: 100%;
-  height: 48px;
+  height: 36px;
+  padding-top: 12px;
 }
 .flex-wrp{
   display: flex;

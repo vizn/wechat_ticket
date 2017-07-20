@@ -13,7 +13,7 @@
     </view>
   </view>
   <view class="section">
-    <input name="time" placeholder="时间" />
+    <input name="time" placeholder="日期" />
   </view>
   <view class="section">
     <input name="number" placeholder="车次" />
