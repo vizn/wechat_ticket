@@ -15,7 +15,6 @@
         <input name="end" placeholder="太原"/>
       </view>
     </navigator>
-
   </view>
   <view class="section_end">
     <picker mode="date" value="{{props.date}}" start="{{props.searchInfo.startDate}}" end="{{props.searchInfo.endDate}}" bindchange="bindDateChange">
