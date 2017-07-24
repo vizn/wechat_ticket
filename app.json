@@ -1,6 +1,8 @@
 {
   "pages":[
     "pages/index/index",
+    "pages/city/index",
+    "pages/city/search",
     "pages/logs/logs",
     "pages/my/index"
   ],

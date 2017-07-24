@@ -1,0 +1,12 @@
+
+<view class="search-bg"> <input placeholder="中文/拼音/首字母" placeholder-style="search-placeholder" class="search"/></view>
+<view class="city-container">
+  <view class="hot-title">热门城市</view>
+  <view class="city-panel">
+    <view class="city-cell city-cell--last-child">
+     <view class="city-label">蓝色</view>
+      <view class="city-label city-label--primary">红色</view>
+      <view class="city-label city-label--disabled">黑色</view>
+    </view>
+  </view>
+</view>

@@ -2,23 +2,29 @@
 <image src="http://pic.58pic.com/58pic/15/41/01/38d58PICqx9_1024.jpg"></image>
 <form bindsubmit="formSubmit">
   <view class="section flex-wrp">
-    <view class="flex-item bc_start">
-      <input name="start" placeholder="北京" />
-    </view>
+    <navigator url="/pages/city/index?type=start" hover-class="none">
+      <view class="flex-item item">
+        <input name="start" placeholder="北京"/>
+      </view>
+    </navigator>
     <view class="flex-item bc_icon">
       <image style="width: 20px; height:20px" src="../../images/change.png"></image>
     </view>
-    <view class="flex-item bc_end">
-      <input name="end" placeholder="太原" />
-    </view>
+    <navigator url="/pages/city/index?type=end" hover-class="none">
+      <view class="flex-item item">
+        <input name="end" placeholder="太原"/>
+      </view>
+    </navigator>
+
   </view>
-  <view class="section">
-    <input name="time" placeholder="日期" />
+  <view class="section_end">
+    <picker mode="date" value="{{props.date}}" start="{{props.searchInfo.startDate}}" end="{{props.searchInfo.endDate}}" bindchange="bindDateChange">
+      <view class="picker item">
+      {{props.searchInfo.date}}
+      </view>
+    </picker>
   </view>
-  <view class="section">
-    <input name="number" placeholder="车次" />
-  </view>
-  
+
   <view class="btn-area">
     <button formType="submit">提交</button>
   </view>
