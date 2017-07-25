@@ -21,7 +21,6 @@
 }
 .flex-item{
   flex:1;
-  width: 30%;
 }
 .item{
   margin-left: 20px;

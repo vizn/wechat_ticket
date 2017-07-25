@@ -9,7 +9,7 @@ app.use(json())
 app.use((ctx) => {
   // const url = 'http://api.12306.com/v1/train/trainInfos?arrStationCode=TYV&deptDate=2017-07-25&deptStationCode=BJP&findGD=false'
   // const url = path.resolve(__dirname, 'json/hotcity.json')
-  let data = 'Holle World'
+  // let data = 'Holle World'
   // const response =  await request(url)
   ctx.body = require('./json/hotcity.js')
   // console.log(response)

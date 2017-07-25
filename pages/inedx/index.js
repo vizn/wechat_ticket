@@ -1,4 +1,4 @@
-// pages/city/search.js
+// pages/inedx/index.js
 Page({
 
   /**

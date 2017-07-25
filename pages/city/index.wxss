@@ -2,6 +2,8 @@
   height: 32px;
   border-bottom: 1px solid #eee;
   padding-left: 20px;
+  color: #999;
+  font-size: 18px;
 }
 .city-container{
   margin-top: 60px;
@@ -10,6 +12,19 @@
 .city-cell{
   margin-bottom: 30px;
 }
+.city-cell input{
+  display:none;
+}
+.city-cell button{
+  background:#fff;
+  display: inline-block;
+  font-size: 14px;
+  line-height: 28px;
+  color: #333;
+  border: 0;
+  padding: 0 12px;
+  margin: 0;
+}
 .city-label {
   display: inline-block;
   font-size: 14px;
@@ -17,9 +32,7 @@
   width: 14.5%;
   line-height: 28px;
   color: #333;
-  border: 1rpx solid #ccc;
-  padding: 0px 10px;
-  border-radius: 2px;
+  border-radius: 4px;
   margin: 10px;
   box-sizing: border-box;
   vertical-align: middle;
@@ -42,4 +55,3 @@
   background: #fff;
   margin: 4px 10px;
 }
-

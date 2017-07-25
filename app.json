@@ -2,7 +2,6 @@
   "pages":[
     "pages/index/index",
     "pages/city/index",
-    "pages/city/search",
     "pages/logs/logs",
     "pages/my/index"
   ],
@@ -38,5 +37,5 @@
     "uploadFile": 10000,
     "downloadFile": 10000
   },
-  "debug": true
+  "debug": false
 }

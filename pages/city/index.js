@@ -4,11 +4,16 @@ var observer = require('../../libs/observer').observer;
 Page(observer({
   props: {
     cityInfo: require('../../stores/city.js').default,
+    searchInfo: require('../../stores/search.js').default
   },
-  bindDateChange: function (e) {
-    this.props.cityInfo.receiveDate(e.detail.value)
+  bindDateSelect: function (data) {
+    console.log(data.detail.value.input)
   },
   onLoad: function (option) {
-    console.log(option.type)
+    this.props.cityInfo.receiveHotCity()
+    //获取选择始发或终点
+    this.props.cityInfo.receiveType(option.type)
+
+    // console.log(option.type)
   }
 }))

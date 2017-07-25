@@ -1,167 +1,147 @@
 module.exports =[
     {
-        "cityCode": "北京",
-        "cityName": "BJP",
+        "cityName": "北京",
+        "cityCode": "BJP",
         "cityIndex": "B"
     },
     {
-        "cityCode": "上海",
-        "cityName": "SHH",
+        "cityName": "上海",
+        "cityCode": "SHH",
         "cityIndex": "S"
     },
     {
-        "cityCode": "天津",
-        "cityName": "TJP",
+        "cityName": "天津",
+        "cityCode": "TJP",
         "cityIndex": "T"
     },
     {
-        "cityCode": "重庆",
-        "cityName": "CQW",
+        "cityName": "重庆",
+        "cityCode": "CQW",
         "cityIndex": "C"
     },
     {
-        "cityCode": "长沙",
-        "cityName": "CSQ",
+        "cityName": "长沙",
+        "cityCode": "CSQ",
         "cityIndex": "C"
     },
     {
-        "cityCode": "长春",
-        "cityName": "CCT",
+        "cityName": "长春",
+        "cityCode": "CCT",
         "cityIndex": "C"
     },
     {
-        "cityCode": "成都",
-        "cityName": "CDW",
+        "cityName": "成都",
+        "cityCode": "CDW",
         "cityIndex": "C"
     },
     {
-        "cityCode": "福州",
-        "cityName": "FZS",
+        "cityName": "福州",
+        "cityCode": "FZS",
         "cityIndex": "F"
     },
     {
-        "cityCode": "广州",
-        "cityName": "GZQ",
+        "cityName": "广州",
+        "cityCode": "GZQ",
         "cityIndex": "G"
     },
     {
-        "cityCode": "贵阳",
-        "cityName": "GIW",
+        "cityName": "贵阳",
+        "cityCode": "GIW",
         "cityIndex": "G"
     },
     {
-        "cityCode": "呼和浩特",
-        "cityName": "HHC",
+        "cityName": "合肥",
+        "cityCode": "HFH",
         "cityIndex": "H"
     },
     {
-        "cityCode": "哈尔滨",
-        "cityName": "HBB",
+        "cityName": "杭州",
+        "cityCode": "HZH",
         "cityIndex": "H"
     },
     {
-        "cityCode": "合肥",
-        "cityName": "HFH",
-        "cityIndex": "H"
-    },
-    {
-        "cityCode": "杭州",
-        "cityName": "HZH",
-        "cityIndex": "H"
-    },
-    {
-        "cityCode": "海口",
-        "cityName": "VUQ",
+        "cityName": "海口",
+        "cityCode": "VUQ",
         "cityIndex": "V"
     },
     {
-        "cityCode": "济南",
-        "cityName": "JNK",
+        "cityName": "济南",
+        "cityCode": "JNK",
         "cityIndex": "J"
     },
     {
-        "cityCode": "昆明",
-        "cityName": "KMM",
+        "cityName": "昆明",
+        "cityCode": "KMM",
         "cityIndex": "K"
     },
     {
-        "cityCode": "拉萨",
-        "cityName": "LSO",
+        "cityName": "拉萨",
+        "cityCode": "LSO",
         "cityIndex": "L"
     },
     {
-        "cityCode": "兰州",
-        "cityName": "LZJ",
+        "cityName": "兰州",
+        "cityCode": "LZJ",
         "cityIndex": "L"
     },
     {
-        "cityCode": "南宁",
-        "cityName": "NNZ",
+        "cityName": "南宁",
+        "cityCode": "NNZ",
         "cityIndex": "N"
     },
     {
-        "cityCode": "南京",
-        "cityName": "NJH",
+        "cityName": "南京",
+        "cityCode": "NJH",
         "cityIndex": "N"
     },
     {
-        "cityCode": "南昌",
-        "cityName": "NCG",
+        "cityName": "南昌",
+        "cityCode": "NCG",
         "cityIndex": "N"
     },
     {
-        "cityCode": "沈阳",
-        "cityName": "SYT",
+        "cityName": "沈阳",
+        "cityCode": "SYT",
         "cityIndex": "S"
     },
     {
-        "cityCode": "石家庄",
-        "cityName": "SJP",
-        "cityIndex": "S"
-    },
-    {
-        "cityCode": "太原",
-        "cityName": "TYV",
+        "cityName": "太原",
+        "cityCode": "TYV",
         "cityIndex": "T"
     },
     {
-        "cityCode": "乌鲁木齐南",
-        "cityName": "WMR",
+        "cityName": "武汉",
+        "cityCode": "WHN",
         "cityIndex": "W"
     },
     {
-        "cityCode": "武汉",
-        "cityName": "WHN",
-        "cityIndex": "W"
-    },
-    {
-        "cityCode": "西宁",
-        "cityName": "XNO",
+        "cityName": "西宁",
+        "cityCode": "XNO",
         "cityIndex": "X"
     },
     {
-        "cityCode": "西安",
-        "cityName": "XAY",
+        "cityName": "西安",
+        "cityCode": "XAY",
         "cityIndex": "X"
     },
     {
-        "cityCode": "银川",
-        "cityName": "YIJ",
+        "cityName": "银川",
+        "cityCode": "YIJ",
         "cityIndex": "Y"
     },
     {
-        "cityCode": "郑州",
-        "cityName": "ZZF",
+        "cityName": "郑州",
+        "cityCode": "ZZF",
         "cityIndex": "Z"
     },
     {
-        "cityCode": "深圳",
-        "cityName": "SZQ",
+        "cityName": "深圳",
+        "cityCode": "SZQ",
         "cityIndex": "S"
     },
     {
-        "cityCode": "厦门",
-        "cityName": "XMS",
+        "cityName": "厦门",
+        "cityCode": "XMS",
         "cityIndex": "X"
     }
 ]
