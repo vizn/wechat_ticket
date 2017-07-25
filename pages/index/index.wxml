@@ -4,7 +4,7 @@
   <view class="section flex-wrp">
     <navigator url="/pages/city/index?type=start" hover-class="none">
       <view class="flex-item item">
-        <input name="start" placeholder="北京" value="{{props.searchInfo.startCity.cityName}}"/>
+        <input name="start" placeholder="北京" value="{{props.searchInfo.startCity[0]}}"/>
       </view>
     </navigator>
     <view class="flex-item bc_icon">
@@ -12,7 +12,7 @@
     </view>
     <navigator url="/pages/city/index?type=end" hover-class="none">
       <view class="flex-item item">
-        <input name="end" placeholder="太原" value="{{props.searchInfo.endCity.cityName}}"/>
+        <input name="end" placeholder="太原" value="{{props.searchInfo.endCity[0]}}"/>
       </view>
     </navigator>
   </view>

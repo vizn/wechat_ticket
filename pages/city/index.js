@@ -7,7 +7,12 @@ Page(observer({
     searchInfo: require('../../stores/search.js').default
   },
   bindDateSelect: function (data) {
-    console.log(data.detail.value.input)
+    if(this.props.cityInfo.type == 'start'){
+      this.props.searchInfo.receiveStartCity(data.detail.value.input)
+    }
+    if (this.props.cityInfo.type == 'end') {
+      this.props.searchInfo.receiveEndCity(data.detail.value.input)
+    }
   },
   onLoad: function (option) {
     this.props.cityInfo.receiveHotCity()

@@ -15,10 +15,10 @@ var searchInfo = function(){
     this.date = data
   }
   this.receiveStartCity = function(data){
-    this.startCity = data
+    this.startCity = data.split('^')
   }
   this.receiveEndCity = function(data){
-    this.endCity = data
+    this.endCity = data.split('^')
   }
   this.getTicket = function(){
     console.log(this)
