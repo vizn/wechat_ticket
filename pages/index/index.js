@@ -9,20 +9,22 @@ Page(observer(Object.assign({}, Toast, {
   bindDateChange: function(e) {
     this.props.searchInfo.receiveDate(e.detail.value)
   },
-  bindStartCityHandle: function(e){
-    // wx.navipateTo({
-    //   url: '../city/index?type=start'
-    // })
-    // this.props.searchInfo.receiveStartCity(e.detail.value)
+  bindStartHandle: function() {
+    wx.navigateTo({url: "/pages/city/index?type=start"})
   },
-  bindEndCityHandle: function(e){
-    // wx.navipateTo({
-    //   url: '../city/index?type=end'
-    // })
-    // this.props.searchInfo.receiveEndCity(e.detail.value)
+  bindEndHandle: function() {
+    wx.navigateTo({url: "/pages/city/index?type=end"})
   },
   formSubmit: function (e) {
-    this.props.searchInfo.getTicket()
-    console.log('form发生了submit事件，携带数据为：', e.detail.value)
+    if(!this.props.searchInfo.startCity){
+      this.showZanToast('请选择始发站')
+      return
+    }
+    if(!this.props.searchInfo.endCity){
+      this.showZanToast('请选择终点站')
+      return
+    }
+    //查询车次信息
+    this.props.searchInfo.getTrainInfos()
   }
 })))

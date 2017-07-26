@@ -1,4 +1,4 @@
-// pages/inedx/index.js
+// pages/index/list.js
 Page({
 
   /**

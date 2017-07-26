@@ -1,4 +1,5 @@
 var extendObservable = require('../libs/mobx').extendObservable
+var apiPath = require('../config/apiPath')
 
 var cityInfo = function () {
   extendObservable(this, {
@@ -12,8 +13,8 @@ var cityInfo = function () {
   this.receiveHotCity = function () {
     var that = this
     wx.request({
-      url: 'http://127.0.0.1:3000/',
-      method: 'get',
+      url: apiPath.HOTCITY,
+      method: 'GET',
       header: {
           'content-type': 'application/json'
       },

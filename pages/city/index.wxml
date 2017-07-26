@@ -17,7 +17,7 @@
   <navigator class="city-label" open-type="navigateBack" wx:for="{{props.cityInfo.hotCity}}" wx:key="{{index}}">
     <form bindsubmit="bindDateSelect">
     <input name="input" value="{{item.cityName +'^'+item.cityCode}}" />
-    <button formType="submit">{{item.cityName}}</button>
+    <button type="primary" formType="submit">{{item.cityName}}</button>
     </form>
   </navigator>
   </view>

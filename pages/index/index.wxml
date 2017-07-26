@@ -1,20 +1,17 @@
+<import src="../../components/toast/index.wxml" />
 <view class="main">
 <image src="http://pic.58pic.com/58pic/15/41/01/38d58PICqx9_1024.jpg"></image>
 <form bindsubmit="formSubmit">
   <view class="section flex-wrp">
-    <navigator url="/pages/city/index?type=start" hover-class="none">
-      <view class="flex-item item">
-        <input name="start" placeholder="北京" value="{{props.searchInfo.startCity[0]}}"/>
+      <view class="flex-item item" bindtap="bindStartHandle">
+        {{props.searchInfo.startCity[0]||'始发站'}}
       </view>
-    </navigator>
     <view class="flex-item bc_icon">
       <image style="width: 20px; height:20px" src="../../images/change.png"></image>
     </view>
-    <navigator url="/pages/city/index?type=end" hover-class="none">
-      <view class="flex-item item">
-        <input name="end" placeholder="太原" value="{{props.searchInfo.endCity[0]}}"/>
+      <view class="flex-item item" bindtap="bindEndHandle">
+        {{props.searchInfo.endCity[0]||'终点站'}}
       </view>
-    </navigator>
   </view>
   <view class="section_end">
     <picker mode="date" value="{{props.date}}" start="{{props.searchInfo.startDate}}" end="{{props.searchInfo.endDate}}" bindchange="bindDateChange">
@@ -29,3 +26,4 @@
   </view>
 </form>
 </view>
+<template is="zan-toast" data="{{ zanToast }}"></template>

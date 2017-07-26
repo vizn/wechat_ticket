@@ -5,7 +5,7 @@ var app = getApp()
 
 var userInfo = function(){
   extendObservable(this,{
-    title: 'Hello World',
+    title: '火车余票查询',
     data: {}
   })
   this.receive = function(){

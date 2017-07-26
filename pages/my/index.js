@@ -11,7 +11,7 @@ Page(observer(Object.assign({}, Toast, {
     // wx.navigateTo({
     //   url: '../logs/logs'
     // })
-    // this.showZanToast('AA')
+    this.showZanToast('AA')
     this.props.userInfo.changeTitle()
   },
   onLoad: function () {
