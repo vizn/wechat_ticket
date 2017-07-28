@@ -34,11 +34,11 @@ var searchInfo = function(){
       header: {
         'content-type': 'application/json'
       },
-      data: {
+      data: JSON.stringify({
         startCityCode: that.startCity[1],
         date: that.date,
         endCityCode: that.endCity[1]
-      },
+      }),
       success:function(json){
         if(json.statusCode == 200){
           console.log(json.data.data.trainInfos)

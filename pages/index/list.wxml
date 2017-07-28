@@ -1,2 +1,2 @@
 <!--pages/index/list.wxml-->
-<text>pages/index/list.wxml</text>
+<text>{{props.searchInfo.trainInfos}}</text>
