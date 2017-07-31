@@ -4,13 +4,13 @@
 <form bindsubmit="formSubmit">
   <view class="section flex-wrp">
       <view class="flex-item item" bindtap="bindStartHandle">
-        {{props.searchInfo.startCity[0]||'始发站'}}
+        {{props.searchInfo.startCity[0]||'出发'}}
       </view>
     <view class="flex-item bc_icon">
       <image style="width: 20px; height:20px" src="../../images/change.png"></image>
     </view>
       <view class="flex-item item" bindtap="bindEndHandle">
-        {{props.searchInfo.endCity[0]||'终点站'}}
+        {{props.searchInfo.endCity[0]||'到达'}}
       </view>
   </view>
   <view class="section_end">

@@ -1,2 +1,14 @@
 <!--pages/index/list.wxml-->
-<text>{{props.searchInfo.trainInfos}}</text>
+
+<view class="container">
+  <view class="time-bar-holder" >
+    <view class="goto flex"> ~前一天 </view>
+    <view class="pick flex">
+      <view class="pick-date">2017-07-29</view>
+      <view class="pick-week">周六</view>
+      <view class="calendar-icon">^</view>
+    </view>
+    <view class="goto flex"> 后一天~ </view>
+  </view>
+  <view> list</view>
+</view>

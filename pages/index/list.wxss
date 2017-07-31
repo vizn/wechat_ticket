@@ -1,1 +1,25 @@
 /* pages/index/list.wxss */
+.container{
+  margin: 0;
+  padding: 0;
+}
+.time-bar-holder{
+  height: 32px;
+  width: 100%;
+  background: #22ca92;
+  color: #fff;
+  display: flex;
+}
+.flex{
+  flex:1;
+  line-height: 24px;
+}
+.pick{
+  font-size: 14px;
+  text-align: center;
+  display: flex;
+}
+.goto{
+  font-size: 16px;
+  text-align: center;
+}
