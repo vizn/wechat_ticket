@@ -2,7 +2,7 @@
 <view class="search"> <input placeholder="中文/拼音/首字母" /></view>
 <view class="city-container">
 
-  <view class="hot-title">最近选择</view>
+  <view class="hot-title">常用地址</view>
   <view class="city-cell">
     <view class="city-label">蓝色</view>
     <view class="city-label">蓝色</view>
