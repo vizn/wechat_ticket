@@ -19,10 +19,10 @@
 .flex-wrp{
   display: flex;
 }
-.flex-item{
-  flex:1;
-}
-
 .item{
+  flex:2;
   margin-left: 20px;
+}
+.bc_icon{
+  flex:1;
 }

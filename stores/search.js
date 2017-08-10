@@ -10,7 +10,7 @@ var searchInfo = function(){
     date: formatDate(date),
     startDate: formatDate(date),
     endDate: formatDate(new Date(date.getFullYear(),date.getMonth(),date.getDate()+29)),
-    trainInfos: '',
+    trainInfos: ''
   })
 
   this.receiveDate = function(data){
@@ -27,7 +27,6 @@ var searchInfo = function(){
       title: '加载中',
     })
     var that = this
-
     wx.request({
       url: apiPath.TRAININFOS,
       method: 'POST',
@@ -41,8 +40,17 @@ var searchInfo = function(){
       }),
       success:function(json){
         if(json.statusCode == 200){
-          console.log(json.data.data.trainInfos)
-          that.trainInfos = json.data.data.trainInfos
+          var data = json.data.data.trainInfos
+          if (data){
+            for (var i = 0; i < data.length; i++) {
+              var count = 0
+              for (var j = 0; j < data[i].seatList.length; j++) {
+                count += parseInt(data[i].seatList[j].seatNum)
+              }
+              data[i].seatSum = count
+            }
+          }
+          that.trainInfos = data
           wx.hideLoading()
           wx.navigateTo({
             url: 'list'

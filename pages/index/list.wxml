@@ -4,11 +4,40 @@
   <view class="time-bar-holder" >
     <view class="goto flex"> ~前一天 </view>
     <view class="pick flex">
-      <view class="pick-date">2017-07-29</view>
+      <view class="pick-date">{{props.searchInfo.date}}</view>
       <view class="pick-week">周六</view>
-      <view class="calendar-icon">^</view>
     </view>
     <view class="goto flex"> 后一天~ </view>
   </view>
-  <view> list</view>
+  <view class="top32"></view>
+  <block wx:key="*this" wx:for="{{props.searchInfo.trainInfos}}">
+     <view class="list-train">
+      <view class="list-item-start list-item-flex">
+        <view>{{item.deptStationName}}</view>
+        <view class="start-time">{{item.deptTime}}</view>
+      </view>
+      <view class="list-item-number list-item-flex">
+        <view class="trainCode">{{item.trainCode}}</view>
+        <view class="duration">{{item.runTime}}<view wx:if="{{item.arriveDays == '次日到达'}}"> (次日) </view></view>
+      </view>
+      <view class="list-item-end list-item-flex">
+        <view>{{item.arrStationName}}</view>
+        <view class="end-time">{{item.arrTime}}</view>
+      </view>
+      <view class="list-item-price list-item-flex">
+        ￥<view class="money">{{item.minPrice}}</view>起
+      </view>
+    </view>
+    <view class="list-item">
+      <view class="list-seat">
+        <block wx:if="{{item.seatSum > 0}}">
+        <view wx:for="{{item.seatList}}" wx:key="*this" wx:for-item="seatItem" class="list-seat-item">
+          {{seatItem.seatName}}:{{seatItem.seatNum}}
+        </view>
+        </block>
+        <view wx:else>暂无余票</view>
+      </view>
+
+    </view>
+  </block>
 </view>

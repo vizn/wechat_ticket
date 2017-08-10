@@ -17,11 +17,11 @@ Page(observer(Object.assign({}, Toast, {
   },
   formSubmit: function (e) {
     if(!this.props.searchInfo.startCity){
-      this.showZanToast('请选择始发站')
+      this.showZanToast('请选择出发站')
       return
     }
     if(!this.props.searchInfo.endCity){
-      this.showZanToast('请选择终点站')
+      this.showZanToast('请选择到达站')
       return
     }
     //查询车次信息

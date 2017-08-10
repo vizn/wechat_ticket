@@ -1,7 +1,13 @@
 /* pages/index/list.wxss */
 .container{
+  background: #eee;
   margin: 0;
   padding: 0;
+  color:#666;
+}
+.top32{
+  height: 32px;
+  width: 100vw
 }
 .time-bar-holder{
   height: 32px;
@@ -9,17 +15,86 @@
   background: #22ca92;
   color: #fff;
   display: flex;
+  position: fixed;
 }
 .flex{
   flex:1;
   line-height: 24px;
 }
 .pick{
-  font-size: 14px;
+  line-height: 28px;
+  font-size: 13px;
   text-align: center;
   display: flex;
+  justify-content: space-around;
+}
+.pick-week{
+  margin-left: 10px;
 }
 .goto{
+  line-height: 26px;  
+  font-size: 14px;
+  text-align: center;
+}
+
+.list-item{
+  width:100vw;
+  background: #fff;
+  margin-bottom: 15px;
+}
+.list-train{
+  background: #fff;  
+  width: 90vw;
+  padding: 5vw;
   font-size: 16px;
   text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.list-item-flex{
+  width: 20vw;
+}
+.list-seat{
+  border-top: 1px dashed #ccc;
+  width: 90vw;
+  margin: 0 5vw;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  font-size: 14px;
+}
+.list-item-price{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  font-size: 12px;
+}
+.list-seat-item{
+  height: 24px;
+  line-height: 24px;
+}
+.start-time{
+  color:#333;
+  margin-top: 10px;
+}
+.end-time{
+  color:#333;
+  margin-top: 10px;
+}
+.duration{
+  border-top: 1px dashed #ccc;
+  padding-top: 5px;
+  font-size: 12px;
+  display: flex;
+  justify-content: center;
+}
+.money{
+  color:red;
+  font-size: 20px;
+  margin: 0 2px;
+}
+.trainCode{
+  margin: 0 2px;
 }

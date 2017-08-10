@@ -14,7 +14,7 @@ var cityInfo = function () {
     var that = this
     wx.request({
       url: apiPath.HOTCITY,
-      method: 'GET',
+      method: 'POST',
       header: {
           'content-type': 'application/json'
       },
