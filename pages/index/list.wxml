@@ -10,7 +10,7 @@
     <view class="goto flex"> 后一天~ </view>
   </view>
   <view class="top32"></view>
-  <block wx:key="*this" wx:for="{{props.searchInfo.trainInfos}}">
+  <block wx:key="*this" wx:for-index="key" wx:for="{{props.searchInfo.trainInfos}}">
      <view class="list-train">
       <view class="list-item-start list-item-flex">
         <view>{{item.deptStationName}}</view>
@@ -29,15 +29,25 @@
       </view>
     </view>
     <view class="list-item">
-      <view class="list-seat">
-        <block wx:if="{{item.seatSum > 0}}">
-        <view wx:for="{{item.seatList}}" wx:key="*this" wx:for-item="seatItem" class="list-seat-item">
-          {{seatItem.seatName}}:{{seatItem.seatNum}}
-        </view>
-        </block>
-        <view wx:else>暂无余票</view>
+      <block wx:if="{{item.seatSum > 0}}">
+        <black wx:if="{{item.seatStatus == 0}}">
+          <view class="list-seat" id="{{key}}" bindtap="bindChangeSeatStatus">
+            <view wx:for="{{item.seatList}}" wx:key="*this" wx:for-item="seatItem" class="list-seat-item" id="{{key}}">
+              {{seatItem.seatName}}:{{seatItem.seatNum}}
+            </view>
+          </view>
+        </black>
+        <black wx:else>
+          <view class="list-seat-column" id="{{key}}" bindtap="bindChangeSeatStatus">
+            <view wx:for="{{item.seatList}}" wx:key="*this" wx:for-item="seatItem" class="list-seat-item" id="{{key}}">
+              {{seatItem.seatName}}:{{seatItem.seatNum}}:{{seatItem.seatPrice}}
+            </view>
+          </view>
+        </black>
+      </block>
+      <view class="list-seat" wx:else>
+        暂无余票
       </view>
-
     </view>
   </block>
 </view>

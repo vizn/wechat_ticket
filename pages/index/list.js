@@ -6,6 +6,10 @@ Page(observer(Object.assign({}, Toast, {
   props: {
     searchInfo: require('../../stores/search.js').default,
   },
+  bindChangeSeatStatus: function(e){
+    console.log(e)
+    this.props.searchInfo.changeSeatStatus(parseInt(e.target.id))
+  },
   onLoad: function(){
     wx.setNavigationBarTitle({
       title: "北京-太原"

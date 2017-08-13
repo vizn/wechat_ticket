@@ -22,6 +22,15 @@ var searchInfo = function(){
   this.receiveEndCity = function(data){
     this.endCity = data.split('^')
   }
+  this.changeSeatStatus = function(key){
+    console.log(key)
+    // console.log(this.trainInfos[key])
+    if(this.trainInfos[key].seatStatus == 0){
+      this.trainInfos[key].seatStatus = 1
+    }else{
+      this.trainInfos[key].seatStatus = 0
+    }
+  }
   this.getTrainInfos = function(){
     wx.showLoading({
       title: '加载中',
@@ -48,6 +57,7 @@ var searchInfo = function(){
                 count += parseInt(data[i].seatList[j].seatNum)
               }
               data[i].seatSum = count
+              data[i].seatStatus = 0
             }
           }
           that.trainInfos = data
