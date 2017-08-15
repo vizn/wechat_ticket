@@ -12,10 +12,11 @@
 .time-bar-holder{
   height: 32px;
   width: 100%;
-  background: #22ca92;
+  background: #6ed458;
   color: #fff;
   display: flex;
   position: fixed;
+  z-index: 999;
 }
 .flex{
   flex:1;
@@ -74,6 +75,28 @@
   justify-content: space-between;
   padding: 10px 0;
   font-size: 14px;
+}
+.list-seat-column-item{
+  display: flex;
+  justify-content: space-around;
+}
+.list-seat-column-item-value{
+  flex: 1;
+  text-align: left;
+  line-height: 28px;
+}
+.list-seat-column-item-value input{
+  display:none;
+}
+.list-seat-column-item-value button{
+  width: 60px;
+  background: #6ed458;
+  color:#fff;
+  font-size: 14px;
+  line-height: 24px;
+  border: 0;
+  margin: 0;
+  z-index: 0;
 }
 .list-item-price{
   display: flex;

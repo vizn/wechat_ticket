@@ -16,6 +16,7 @@ Page(observer({
   },
   onLoad: function (option) {
     this.props.cityInfo.receiveHotCity()
+    this.props.cityInfo.receiveAllCity()
     //获取选择始发或终点
     this.props.cityInfo.receiveType(option.type)
 

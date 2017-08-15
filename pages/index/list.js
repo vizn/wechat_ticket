@@ -7,8 +7,9 @@ Page(observer(Object.assign({}, Toast, {
     searchInfo: require('../../stores/search.js').default,
   },
   bindChangeSeatStatus: function(e){
-    console.log(e)
-    this.props.searchInfo.changeSeatStatus(parseInt(e.target.id))
+    if (e.target.id){
+      this.props.searchInfo.changeSeatStatus(parseInt(e.target.id))
+    }
   },
   onLoad: function(){
     wx.setNavigationBarTitle({
@@ -16,7 +17,7 @@ Page(observer(Object.assign({}, Toast, {
     })
     wx.setNavigationBarColor({
       frontColor: '#ffffff',
-      backgroundColor: '#22ca92',
+      backgroundColor: '#6ed458',
       animation: {
         duration: 400,
         timingFunc: 'easeIn'

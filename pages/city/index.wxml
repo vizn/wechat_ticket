@@ -4,21 +4,32 @@
 
   <view class="hot-title">常用地址</view>
   <view class="city-cell">
-    <view class="city-label">蓝色</view>
-    <view class="city-label">蓝色</view>
-    <view class="city-label">蓝色</view>
-    <view class="city-label">蓝色</view>
-    <view class="city-label">蓝色</view>
+    <navigator class="city-label" open-type="navigateBack" wx:for="{{props.cityInfo.historyCity}}" wx:key="{{index}}">
+      <form bindsubmit="bindDateSelect">
+      <input name="input" value="{{item.cityName +'^'+item.cityCode}}" />
+      <button type="primary" formType="submit">{{item.cityName}}</button>
+      </form>
+    </navigator>
   </view>
 
   <view class="hot-title">热门城市</view>
-
   <view class="city-cell">
-  <navigator class="city-label" open-type="navigateBack" wx:for="{{props.cityInfo.hotCity}}" wx:key="{{index}}">
-    <form bindsubmit="bindDateSelect">
-    <input name="input" value="{{item.cityName +'^'+item.cityCode}}" />
-    <button type="primary" formType="submit">{{item.cityName}}</button>
-    </form>
-  </navigator>
+    <navigator class="city-label" open-type="navigateBack" wx:for="{{props.cityInfo.hotCity}}" wx:key="{{index}}">
+      <form bindsubmit="bindDateSelect">
+      <input name="input" value="{{item.cityName +'^'+item.cityCode}}" />
+      <button type="primary" formType="submit">{{item.cityName}}</button>
+      </form>
+    </navigator>
   </view>
+  <block wx:for="{{props.cityInfo.index}}" wx:for-item="indexItem" wx:key="*this">
+  <view class="hot-title">{{indexItem}}</view>
+  <view class="city-cell-index">
+    <navigator class="city-label-index" open-type="navigateBack" wx:for="{{props.cityInfo.allCity}}" wx:key="{{index}}"  wx:if="{{item.cityIndex == 'A'}}">
+        <form bindsubmit="bindDateSelect">
+        <input name="input" value="{{item.cityName +'^'+item.cityCode}}" />
+        <button type="primary" formType="submit">{{item.cityName}}</button>
+        </form>
+    </navigator>
+  </view>
+  </block>
 </view>

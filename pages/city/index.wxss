@@ -10,34 +10,58 @@
   height: 1000px;
 }
 .city-cell{
-  padding-right: 60px;
+  padding-right: 5vw;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
   margin-bottom: 30px;
+}
+.city-cell-index{
+  display: flex;
+  flex-direction: column;
 }
 .city-cell input{
   display:none;
 }
+.city-cell-index input{
+  display:none;
+}
 .city-cell button{
-  flex:1;
-  width: 19vw;
   background:#fff;
   font-size: 14px;
   line-height: 28px;
   color: #333;
   border: 0;
-  margin: 0;
+}
+.city-cell-index button{
+  background:#fff;
+  font-size: 14px;
+  line-height: 28px;
+  color: #333;
+  border: 0;
+  text-align: left;
 }
 .city-label {
   display: inline-block;
   font-size: 14px;
   height: 28px;
-  width: 14.5%;
+  width: 20vw;
   line-height: 28px;
   color: #333;
   border-radius: 4px;
-  margin: 10px;
+  margin: 5px;
+  box-sizing: border-box;
+  vertical-align: middle;
+  text-align: center;
+}
+.city-label-index {
+  display: inline-block;
+  font-size: 14px;
+  height: 28px;
+  width: 100vw;
+  line-height: 28px;
+  color: #333;
+  border-radius: 4px;
+  margin: 5px;
   box-sizing: border-box;
   vertical-align: middle;
   text-align: center;

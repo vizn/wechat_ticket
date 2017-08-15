@@ -12,15 +12,33 @@ var searchInfo = function(){
     endDate: formatDate(new Date(date.getFullYear(),date.getMonth(),date.getDate()+29)),
     trainInfos: ''
   })
-
-  this.receiveDate = function(data){
-    this.date = data
+  this.setStorageCity = function(data){
+    var city = wx.getStorageSync('city') || []
+    var init = 1
+    //判断storage是否存在所选city
+    for (var i = 0; i < city.length; i++){
+      if (city[i].cityCode == data[1]){
+        init = 0
+      }
+    }
+    if(init){
+      if(city.length >7){
+        city.pop()
+      }
+      city.unshift({ cityName: data[0], cityCode: data[1] })
+      wx.setStorageSync('city', city)
+    }
+  }
+  this.receiveDate = function(value){
+    this.date = value
   }
   this.receiveStartCity = function(data){
     this.startCity = data.split('^')
+    this.setStorageCity(this.startCity) 
   }
   this.receiveEndCity = function(data){
     this.endCity = data.split('^')
+    this.setStorageCity(this.endCity) 
   }
   this.changeSeatStatus = function(key){
     console.log(key)
@@ -52,11 +70,6 @@ var searchInfo = function(){
           var data = json.data.data.trainInfos
           if (data){
             for (var i = 0; i < data.length; i++) {
-              var count = 0
-              for (var j = 0; j < data[i].seatList.length; j++) {
-                count += parseInt(data[i].seatList[j].seatNum)
-              }
-              data[i].seatSum = count
               data[i].seatStatus = 0
             }
           }

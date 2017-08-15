@@ -3,33 +3,61 @@ var apiPath = require('../config/apiPath')
 
 var cityInfo = function () {
   extendObservable(this, {
-    hotCity: [{key:1,name:1}],
-    allCity: '',
-    historyCity: '',
+    hotCity: [],
+    allCity: [],
+    get historyCity(){
+      return wx.getStorageSync('city') || []
+    },
     linkCity: '',
-    type:''
+    type:'',
+    index: ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']
   })
 
   this.receiveHotCity = function () {
     var that = this
-    wx.request({
-      url: apiPath.HOTCITY,
-      method: 'POST',
-      header: {
+    if (wx.getStorageSync('hotCity')){
+      that.hotCity = wx.getStorageSync('hotCity')
+    }else{
+      wx.request({
+        url: apiPath.HOTCITY,
+        method: 'POST',
+        header: {
           'content-type': 'application/json'
-      },
-      success:function(json){
-        if(json.statusCode == 200){
-          that.hotCity = json.data
+        },
+        success: function (json) {
+          if (json.statusCode == 200) {
+            that.hotCity = json.data
+            wx.setStorageSync('hotCity', that.hotCity)
+          }
+        },
+        fail: function (e) {
+          console.log(e)
         }
-      },
-      fail:function(e){
-        console.log(e)
-      }
-    })
+      })
+    }
   }
-  this.receiveAllCity = function (data) {
-    this.allCity = data
+  this.receiveAllCity = function () {
+    var that = this
+    if (wx.getStorageSync('allCity')) {
+      that.allCity = wx.getStorageSync('allCity')
+    } else {
+      wx.request({
+        url: apiPath.ALLCITY,
+        method: 'POST',
+        header: {
+          'content-type': 'application/json'
+        },
+        success: function (json) {
+          if (json.statusCode == 200) {
+            that.allCity = json.data
+            wx.setStorageSync('allCity', that.allCity)
+          }
+        },
+        fail: function (e) {
+          console.log(e)
+        }
+      })
+    }
   }
   this.receiveHistoryCity = function (data) {
     this.historyCity = data

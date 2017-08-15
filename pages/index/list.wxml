@@ -29,8 +29,7 @@
       </view>
     </view>
     <view class="list-item">
-      <block wx:if="{{item.seatSum > 0}}">
-        <black wx:if="{{item.seatStatus == 0}}">
+      <black wx:if="{{item.seatStatus == 0}}">
           <view class="list-seat" id="{{key}}" bindtap="bindChangeSeatStatus">
             <view wx:for="{{item.seatList}}" wx:key="*this" wx:for-item="seatItem" class="list-seat-item" id="{{key}}">
               {{seatItem.seatName}}:{{seatItem.seatNum}}
@@ -38,16 +37,22 @@
           </view>
         </black>
         <black wx:else>
-          <view class="list-seat-column" id="{{key}}" bindtap="bindChangeSeatStatus">
-            <view wx:for="{{item.seatList}}" wx:key="*this" wx:for-item="seatItem" class="list-seat-item" id="{{key}}">
-              {{seatItem.seatName}}:{{seatItem.seatNum}}:{{seatItem.seatPrice}}
+          <view class="list-seat-column" bindtap="bindChangeSeatStatus">
+            <view wx:for="{{item.seatList}}" wx:key="*this" wx:for-item="seatItem" class="list-seat-column-item">
+              <view id="{{key}}" class="list-seat-column-item-value">{{seatItem.seatName}}</view>
+              <view id="{{key}}" class="list-seat-column-item-value">{{seatItem.seatNum}}张</view>
+              <view id="{{key}}" class="list-seat-column-item-value">￥{{seatItem.seatPrice}}</view>
+              <view id="{{key}}" class="list-seat-column-item-value">
+                <form wx:if="{{seatItem.showButton == 2}}">
+                <input name="trainCode" type="text" value="{{item.trainCode}}" />
+                <input name="date" type="text" value="{{props.searchInfo.date}}" />
+                <input name="seatCode" type="text" value="{{seatItem.seatCode}}" />
+                <button>预约</button>
+                </form>
+              </view>
             </view>
           </view>
         </black>
-      </block>
-      <view class="list-seat" wx:else>
-        暂无余票
-      </view>
     </view>
   </block>
 </view>
