@@ -6,7 +6,7 @@
     <view class="item" bindtap="bindStartHandle">
       {{props.searchInfo.startCity[0]||'出发'}}
     </view>
-    <view class="bc_icon">
+    <view class="bc_icon" bindtap="bindChangeCity">
       <image style="width: 20px; height:20px" src="../../images/change.png"></image>
     </view>
     <view class="item" bindtap="bindEndHandle">

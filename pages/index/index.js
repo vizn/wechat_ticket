@@ -6,6 +6,9 @@ Page(observer(Object.assign({}, Toast, {
   props: {
     searchInfo: require('../../stores/search.js').default,
   },
+  bindChangeCity: function(){
+    this.props.searchInfo.changeCity()
+  },
   bindDateChange: function(e) {
     this.props.searchInfo.receiveDate(e.detail.value)
   },

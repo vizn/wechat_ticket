@@ -12,6 +12,11 @@ var searchInfo = function(){
     endDate: formatDate(new Date(date.getFullYear(),date.getMonth(),date.getDate()+29)),
     trainInfos: ''
   })
+  this.changeCity = function(){
+    var oldCity = this.startCity
+    this.startCity = this.endCity
+    this.endCity = oldCity
+  }
   this.setStorageCity = function(data){
     var city = wx.getStorageSync('city') || []
     var init = 1
@@ -41,8 +46,6 @@ var searchInfo = function(){
     this.setStorageCity(this.endCity) 
   }
   this.changeSeatStatus = function(key){
-    console.log(key)
-    // console.log(this.trainInfos[key])
     if(this.trainInfos[key].seatStatus == 0){
       this.trainInfos[key].seatStatus = 1
     }else{

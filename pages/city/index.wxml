@@ -21,7 +21,7 @@
       </form>
     </navigator>
   </view>
-  <block wx:for="{{props.cityInfo.index}}" wx:for-item="indexItem" wx:key="*this">
+  <!-- <block wx:for="{{props.cityInfo.index}}" wx:for-item="indexItem" wx:key="*this">
   <view class="hot-title">{{indexItem}}</view>
   <view class="city-cell-index">
     <navigator class="city-label-index" open-type="navigateBack" wx:for="{{props.cityInfo.allCity}}" wx:key="{{index}}"  wx:if="{{item.cityIndex == 'A'}}">
@@ -31,5 +31,5 @@
         </form>
     </navigator>
   </view>
-  </block>
+  </block> -->
 </view>

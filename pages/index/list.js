@@ -11,6 +11,9 @@ Page(observer(Object.assign({}, Toast, {
       this.props.searchInfo.changeSeatStatus(parseInt(e.target.id))
     }
   },
+  bindTrainInfo: function(e){
+    console.log(e.detail)
+  },
   onLoad: function(){
     wx.setNavigationBarTitle({
       title: "北京-太原"
