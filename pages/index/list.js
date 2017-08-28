@@ -5,18 +5,22 @@ var Toast = require('../../components/toast/index')
 Page(observer(Object.assign({}, Toast, {
   props: {
     searchInfo: require('../../stores/search.js').default,
+    userInfo: require('../../stores/userInfo.js').default
   },
   bindChangeSeatStatus: function(e){
     if (e.target.id){
       this.props.searchInfo.changeSeatStatus(parseInt(e.target.id))
     }
   },
-  bindTrainInfo: function(e){
-    console.log(e.detail)
+  bindAddTrainInfo: function(e){
+    var data = e.detail.value
+    data.formId = e.detail.formId
+    this.props.searchInfo.addTrainInfo(data)
   },
   onLoad: function(){
+    this.props.userInfo.receive()
     wx.setNavigationBarTitle({
-      title: "北京-太原"
+      title: this.props.searchInfo.startCity[0] + "-" + this.props.searchInfo.endCity[0]
     })
     wx.setNavigationBarColor({
       frontColor: '#ffffff',

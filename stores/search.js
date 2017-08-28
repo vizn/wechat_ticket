@@ -89,6 +89,50 @@ var searchInfo = function(){
       }
     })
   }
+  this.addTrainInfo = function(data) {
+    var that = this
+    data.trainDate = that.date
+    data.startCity = that.startCity[0]
+    data.startCityCode = that.startCity[1]
+    data.endCity = that.endCity[0]
+    data.endCityCode = that.endCity[1]
+    wx.showLoading({
+      title: '预约中',
+    })
+    wx.request({ 
+      url: apiPath.ADDTRAININFO,
+      method: 'POST',
+      header: {
+        'content-type': 'application/json'
+      },
+      data: JSON.stringify(data),
+      success: function (json) {
+        wx.hideLoading()
+        if (json.statusCode == 200 && json.data.success) {
+          wx.showToast({
+            title: '预约成功',
+            icon: 'success',
+            duration: 2000
+          })
+        }else{
+          wx.showToast({
+            title: '预约失败，请稍后再试',
+            image: 'images/fail.png',
+            duration: 2000
+          })
+        }
+      },
+      fail: function(e) {
+        wx.hideLoading()
+        console.log(e)
+        wx.showToast({
+          title: e.message,
+          image: 'images/fail.png',
+          duration: 2000
+        })
+      }
+    })
+  }
 }
 
 module.exports = {

@@ -1,3 +1,5 @@
+var apiPath = require('./config/apiPath')
+
 //app.js
 App({
   onLaunch: function() {
@@ -42,18 +44,40 @@ App({
 
   getUserInfo: function(cb) {
     var that = this
-    if (this.globalData.userInfo) {
-      typeof cb == "function" && cb(this.globalData.userInfo)
-    } else {
-      //调用登录接口
-      wx.getUserInfo({
-        withCredentials: false,
-        success: function(res) {
-          that.globalData.userInfo = res.userInfo
-          typeof cb == "function" && cb(that.globalData.userInfo)
+    //调用登录接口
+    wx.login({
+      success: function (res) {
+        if (res.code) {
+          wx.request({
+            url: apiPath.GETOPENID,
+            method: 'POST',
+            data: JSON.stringify(res),
+            success: function(json){
+              console.log(json)
+              if (!that.globalData.openId){
+                that.globalData.openId = json.data.openid
+              }
+              if (that.globalData.userInfo) {
+                that.globalData.userInfo.openId = that.globalData.openId
+                typeof cb == "function" && cb(that.globalData.userInfo)
+              } else {
+                wx.getUserInfo({
+                  withCredentials: false,
+                  success: function (r) {
+                    that.globalData.userInfo = r.userInfo
+                    that.globalData.userInfo.openId = that.globalData.openId
+                    console.log(that.globalData.userInfo)
+                    typeof cb == "function" && cb(that.globalData.userInfo)
+                  }
+                })
+              }
+            }
+          })
+        } else {
+          console.log('获取用户登录态失败！' + res.errMsg)
         }
-      })
-    }
+      }
+    })
   },
 
   globalData: {
