@@ -43,11 +43,10 @@
               <view id="{{key}}" class="list-seat-column-item-value">{{seatItem.seatNum}}张</view>
               <view id="{{key}}" class="list-seat-column-item-value">￥{{seatItem.seatPrice}}</view>
               <view id="{{key}}" class="list-seat-column-item-value">
-                <form bindsubmit="bindAddTrainInfo" report-submit="true" wx:if="{{seatItem.showButton == 2}}">
+                <form bindsubmit="bindAddTrainInfo" report-submit="true" wx:if="{{seatItem.seatNum == 0}}">
                 <input name="trainCode" type="text" value="{{item.trainCode}}" />
                 <input name="seatCode" type="text" value="{{seatItem.seatCode}}" />
                 <input name="seatPrice" type="text" value="{{seatItem.seatPrice}}" />
-                <input name="openId" type="text" value="{{props.userInfo.data.openId}}"/>
                 <button type="primary" formType="submit">预约</button>
                 </form>
               </view>

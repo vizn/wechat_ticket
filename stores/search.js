@@ -103,7 +103,8 @@ var searchInfo = function(){
       url: apiPath.ADDTRAININFO,
       method: 'POST',
       header: {
-        'content-type': 'application/json'
+        'Authorization': `Bearer ${wx.getStorageSync('token') || []}`,
+        'Content-Type': 'application/json'
       },
       data: JSON.stringify(data),
       success: function (json) {
