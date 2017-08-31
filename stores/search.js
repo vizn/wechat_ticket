@@ -2,12 +2,16 @@ var extendObservable = require('../libs/mobx').extendObservable
 var {formatDate} = require('../utils/tool')
 var apiPath = require('../config/apiPath')
 
-var date = new Date()
+var date = new Date();
+var a = ["日", "一", "二", "三", "四", "五", "六"];
 var searchInfo = function(){
   extendObservable(this, {
     startCity: '',
     endCity: '',
     date: formatDate(date),
+    get day(){
+      return '星期'+a[new Date(this.date).getDay()];
+    },
     startDate: formatDate(date),
     endDate: formatDate(new Date(date.getFullYear(),date.getMonth(),date.getDate()+29)),
     trainInfos: ''

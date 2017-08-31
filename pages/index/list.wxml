@@ -5,12 +5,12 @@
     <view class="goto flex"> ~前一天 </view>
     <view class="pick flex">
       <view class="pick-date">{{props.searchInfo.date}}</view>
-      <view class="pick-week">周六</view>
+      <view class="pick-week">{{props.searchInfo.day}}</view>
     </view>
     <view class="goto flex"> 后一天~ </view>
   </view>
   <view class="top32"></view>
-  <block wx:key="*this" wx:for-index="key" wx:for="{{props.searchInfo.trainInfos}}">
+  <block wx:key="{{index}}" wx:for-index="key" wx:for="{{props.searchInfo.trainInfos}}">
      <view class="list-train">
       <view class="list-item-start list-item-flex">
         <view>{{item.deptStationName}}</view>
@@ -31,21 +31,22 @@
     <view class="list-item">
       <black wx:if="{{item.seatStatus == 0}}">
           <view class="list-seat" id="{{key}}" bindtap="bindChangeSeatStatus">
-            <view wx:for="{{item.seatList}}" wx:key="*this" wx:for-item="seatItem" class="list-seat-item" id="{{key}}">
+            <view wx:for="{{item.seatList}}" wx:key="{{index}}" wx:for-item="seatItem" class="list-seat-item" id="{{key}}">
               {{seatItem.seatName}}:{{seatItem.seatNum}}
             </view>
           </view>
         </black>
         <black wx:else>
           <view class="list-seat-column" bindtap="bindChangeSeatStatus">
-            <view wx:for="{{item.seatList}}" wx:key="*this" wx:for-item="seatItem" class="list-seat-column-item">
+            <view wx:for="{{item.seatList}}" wx:key="{{index}}"wx:for-item="seatItem" class="list-seat-column-item">
               <view id="{{key}}" class="list-seat-column-item-value">{{seatItem.seatName}}</view>
               <view id="{{key}}" class="list-seat-column-item-value">{{seatItem.seatNum}}张</view>
               <view id="{{key}}" class="list-seat-column-item-value">￥{{seatItem.seatPrice}}</view>
               <view id="{{key}}" class="list-seat-column-item-value">
-                <form bindsubmit="bindAddTrainInfo" report-submit="true" wx:if="{{seatItem.seatNum == 0}}">
+                <form bindsubmit="bindAddTrainInfo" report-submit="true" wx:if="{{seatItem.seatNum > -1}}">
                 <input name="trainCode" type="text" value="{{item.trainCode}}" />
                 <input name="seatCode" type="text" value="{{seatItem.seatCode}}" />
+                <input name="seatName" type="text" value="{{seatItem.seatName}}" />
                 <input name="seatPrice" type="text" value="{{seatItem.seatPrice}}" />
                 <button type="primary" formType="submit">预约</button>
                 </form>
