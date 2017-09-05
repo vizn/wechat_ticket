@@ -1,5 +1,5 @@
 var extendObservable = require('../libs/mobx').extendObservable
-var {formatDate} = require('../utils/tool')
+var { formatDate, formatTime} = require('../utils/tool')
 var apiPath = require('../config/apiPath')
 
 var date = new Date();
@@ -95,11 +95,12 @@ var searchInfo = function(){
   }
   this.addTrainInfo = function(data) {
     var that = this
-    data.trainDate = that.date
+    data.trainDate = that.date + " " + data.deptTime
     data.startCity = that.startCity[0]
     data.startCityCode = that.startCity[1]
     data.endCity = that.endCity[0]
     data.endCityCode = that.endCity[1]
+    // data.created = formatTime(date)
     wx.showLoading({
       title: '预约中',
     })

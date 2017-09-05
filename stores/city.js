@@ -9,9 +9,26 @@ var cityInfo = function () {
       return wx.getStorageSync('city') || []
     },
     linkCity: '',
+    searchCity: [],
     type:'',
     index: ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']
   })
+  this.initSearchCity = function (val){
+    this.searchCity = []
+  }
+  this.getSearchCity = function (val) {
+    this.searchCity = []
+    if(val.length > 1){
+      for (var i = 0; i<this.allCity.length; i++) {
+        if (this.allCity[i].cityName.indexOf(val) > -1) {
+          this.searchCity.push(this.allCity[i])
+        }
+        if (this.allCity[i].cityCode.indexOf(val) > -1) {
+          this.searchCity.push(this.allCity[i])
+        }
+      }
+    }
+  }
 
   this.receiveHotCity = function () {
     var that = this

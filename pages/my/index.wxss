@@ -1,10 +1,10 @@
 /**index.wxss**/
 .userinfo {
+  margin: 50rpx;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-
 .userinfo-avatar {
   width: 128rpx;
   height: 128rpx;
@@ -16,6 +16,31 @@
   color: #aaa;
 }
 
-.usermotto {
-  margin-top: 200px;
+.userorder{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.userorder-title {
+  height: 60rpx;
+  line-height: 60rpx;
+  font-size: 14px;
+  color:#999;
+  background-color: #f1f1f1;
+  padding-left: 20px;
+}
+.userorder-list{
+  display: flex;
+  flex-direction: column;
+}
+.orderinfo{
+  height: 180rpx;
+  line-height: 60rpx;
+  background-color: #f1f1f1;
+  font-size: 14px;
+  color:#666;
+  border-bottom: 1px sold #f1f1f1;
+  margin:15px 20px 0 20px;
+  padding: 0 10px;
+  border-radius: 5px;
 }

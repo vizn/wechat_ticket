@@ -45,6 +45,7 @@
               <view id="{{key}}" class="list-seat-column-item-value">
                 <form bindsubmit="bindAddTrainInfo" report-submit="true" wx:if="{{seatItem.seatNum > -1}}">
                 <input name="trainCode" type="text" value="{{item.trainCode}}" />
+                <input name="deptTime" type='text' value='{{item.deptTime}}'></input>
                 <input name="seatCode" type="text" value="{{seatItem.seatCode}}" />
                 <input name="seatName" type="text" value="{{seatItem.seatName}}" />
                 <input name="seatPrice" type="text" value="{{seatItem.seatPrice}}" />

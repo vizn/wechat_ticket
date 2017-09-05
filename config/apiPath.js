@@ -8,5 +8,6 @@ module.exports = {
   HOTCITY: host + 'hotcity',
   ALLCITY: host + 'allcity',
   ADDTRAININFO: host + 'addTrainInfo',
+  GETUSERORDER: host + 'getUserOrder',
   GETTOKEN: env == "development" ? 'http://127.0.0.1:3000/auth/wechat' : 'https://api.vizn.cn/auth/wechat'
 }

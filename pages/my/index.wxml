@@ -1,12 +1,20 @@
 <import src="../../components/toast/index.wxml" />
+<template is="zan-toast" data="{{ zanToast }}"></template>
 <!--index.wxml-->
 <view class="container">
-  <view  bindtap="bindViewTap" class="userinfo">
+  <view class="userinfo">
     <image class="userinfo-avatar" src="{{props.userInfo.data.avatarUrl}}" background-size="cover"></image>
     <text class="userinfo-nickname">{{props.userInfo.data.nickName}}</text>
   </view>
-  <view class="usermotto">
-    <text class="user-motto">{{props.userInfo.title}}</text>
+  <view class="userorder">
+    <view class="userorder-title">{{props.userInfo.title}}</view>
+    <view class="userorder-list">
+      <view class="orderinfo" wx:key="{{index}}" wx:for-index="key" wx:for="{{props.userInfo.order}}">
+        <view class="orderinfo-date">发车时间：{{item.trainDate}}</view>
+        <view class="orderinfo-traininfo">车次信息：{{item.trainCode+' '+item.startCity+'——'+item.endCity+' '+item.seatName}}</view>
+        <view class="orderinfo-date">预约时间：{{item.created}}</view>
+      </view>
+    </view>
   </view>
 </view>
-<template is="zan-toast" data="{{ zanToast }}"></template>
+

@@ -16,5 +16,11 @@ Page(observer(Object.assign({}, Toast, {
   },
   onLoad: function () {
     this.props.userInfo.receive()
+    wx.setNavigationBarTitle({
+      title: '我的'
+    })
+  },
+  onShow: function (){
+    this.props.userInfo.getUserOrder()
   }
 })))

@@ -4,6 +4,7 @@ var Toast = require('../../components/toast/index')
 
 Page(observer(Object.assign({}, Toast, {
   props: {
+    cityInfo: require('../../stores/city.js').default,
     searchInfo: require('../../stores/search.js').default,
   },
   bindChangeCity: function(){
@@ -13,10 +14,14 @@ Page(observer(Object.assign({}, Toast, {
     this.props.searchInfo.receiveDate(e.detail.value)
   },
   bindStartHandle: function() {
-    wx.navigateTo({url: "/pages/city/index?type=start"})
+    wx.navigateTo({
+      url: "/pages/city/index?type=start"
+    })
   },
   bindEndHandle: function() {
-    wx.navigateTo({url: "/pages/city/index?type=end"})
+    wx.navigateTo({
+      url: "/pages/city/index?type=end"
+    })
   },
   formSubmit: function (e) {
     if(!this.props.searchInfo.startCity){
@@ -29,5 +34,27 @@ Page(observer(Object.assign({}, Toast, {
     }
     //查询车次信息
     this.props.searchInfo.getTrainInfos()
+  },
+  onShow: function () {
+    this.props.cityInfo.initSearchCity()
+  },
+  onShareAppMessage: function (res) {
+    if (res.from === 'button') {
+      // 来自页面内转发按钮
+      console.log(res.target)
+    }
+    var that = this
+    return {
+      title: '火车票查询|预约余票提醒',
+      path: 'pages/index/index',
+      success: function (res) {
+        // 转发成功
+        that.showZanToast('转发成功')
+      },
+      fail: function (res) {
+        // 转发失败
+        that.showZanToast('转发失败')
+      }
+    }
   }
 })))
