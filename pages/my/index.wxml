@@ -1,4 +1,6 @@
 <import src="../../components/toast/index.wxml" />
+<import src="../../components/loadmore/index.wxml" />
+
 <template is="zan-toast" data="{{ zanToast }}"></template>
 <!--index.wxml-->
 <view class="container">
@@ -15,6 +17,11 @@
         <view class="orderinfo-date">预约时间：{{item.created}}</view>
       </view>
     </view>
+    <block wx:if="{{props.userInfo.order.length > 0}}">
+      <template is="zan-loadmore" data="{{nomore: true}}" />
+    </block>
+    <block wx:else>
+      <template is="zan-loadmore" data="{{nodata: true}}" />
+    </block>
   </view>
 </view>
-

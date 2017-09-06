@@ -18,16 +18,19 @@ Page(observer({
   searchCity: function(event){
     this.props.cityInfo.getSearchCity(event.detail.value)
   },
+  onUnload: function () {
+    this.props.cityInfo.initSearchCity()
+  },
   onLoad: function (option) {
-    // wx.showLoading({
-    //   title: '加载中'
-    // })
+    wx.showLoading({
+      title: '加载中'
+    })
     this.props.cityInfo.receiveHotCity()
     this.props.cityInfo.receiveAllCity()
     //获取选择始发或终点
     this.props.cityInfo.receiveType(option.type)
+  },
+  onReady: function (){
+    wx.hideLoading()
   }
-  // onReady: function (){
-  //   wx.hideLoading()
-  // }
 }))

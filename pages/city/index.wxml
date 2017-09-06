@@ -30,7 +30,7 @@
       </view>
     </view>
   </view>
-   <!-- <block wx:for="{{props.cityInfo.index}}" wx:for-item="indexItem" wx:key="{{index}}">
+    <!-- <block wx:for="{{props.cityInfo.index}}" wx:for-item="indexItem" wx:key="{{index}}">
     <view class="hot-title">{{indexItem}}</view>
     <view class="city-cell">
       <view class="city-item" bindtap="bindDateSelect" wx:for="{{props.cityInfo.allCity}}" wx:key="{{index}}" id="{{item.cityName +'^'+item.cityCode}}" wx:if="{{indexItem == item.cityIndex}}">
@@ -42,5 +42,5 @@
         </view>
       </view>
     </view>
-  </block>   -->
+  </block>    -->
 </view>

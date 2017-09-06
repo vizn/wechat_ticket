@@ -1,4 +1,5 @@
 <!--pages/index/list.wxml-->
+<import src ="../../components/loadmore/index.wxml" />
 
 <view class="container">
   <view class="time-bar-holder" >
@@ -56,5 +57,11 @@
           </view>
         </black>
     </view>
+  </block>
+  <block wx:if="{{props.searchInfo.trainInfos.length > 0}}">
+    <template is="zan-loadmore" data="{{nomore: true}}" />
+  </block>
+  <block wx:else>
+    <template is="zan-loadmore" data="{{nodata: true}}" />
   </block>
 </view>

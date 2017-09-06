@@ -1,3 +1,4 @@
+
 //index.js
 var observer = require('../../libs/observer').observer;
 var Toast = require('../../components/toast/index')

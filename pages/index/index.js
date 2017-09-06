@@ -4,7 +4,6 @@ var Toast = require('../../components/toast/index')
 
 Page(observer(Object.assign({}, Toast, {
   props: {
-    cityInfo: require('../../stores/city.js').default,
     searchInfo: require('../../stores/search.js').default,
   },
   bindChangeCity: function(){
@@ -34,9 +33,6 @@ Page(observer(Object.assign({}, Toast, {
     }
     //查询车次信息
     this.props.searchInfo.getTrainInfos()
-  },
-  onShow: function () {
-    this.props.cityInfo.initSearchCity()
   },
   onShareAppMessage: function (res) {
     if (res.from === 'button') {

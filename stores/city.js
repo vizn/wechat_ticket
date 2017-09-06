@@ -68,10 +68,10 @@ var cityInfo = function () {
           if (json.statusCode == 200) {
             that.allCity = json.data
             wx.setStorageSync('allCity', that.allCity)
-          }
+          }        
         },
         fail: function (e) {
-          console.log(e)
+          console.log(e)       
         }
       })
     }

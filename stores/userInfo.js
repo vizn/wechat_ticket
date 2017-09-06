@@ -18,9 +18,6 @@ var userInfo = function(){
       that.data = userInfo
     })
   }
-  this.changeTitle = function(){
-    this.title = this.data.nickName
-  }
   this.getUserOrder = function(){
     var that = this
     wx.request({
